@@ -25,6 +25,7 @@ d3.json("eastAsia.json",
     .style("opacity", '1')
     .attr("stroke", "#000000")
     .attr("stroke-width", 0.2)
+    .attr("id",function(d){return d.properties.CODE;})
     // .on('mouseenter', function(d) {
     //   tooltip.style("display","block")
     //   d3.select(this)
