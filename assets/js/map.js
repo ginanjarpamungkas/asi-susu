@@ -3,9 +3,9 @@ function zoomed() {
     g_country.attr("transform", d3.event.transform);
 }
 
-var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('viewBox', '0 0 960 400').attr('id', 'word-map').call(zoom).on("wheel.zoom", null);
+var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('viewBox', '0 0 960 500').attr('id', 'word-map').call(zoom).on("wheel.zoom", null);
 var g_country = svg.append("g").attr("class", "countries")
-var projection = d3.geoMercator().scale(500).translate([-510,300]);
+var projection = d3.geoMercator().scale(600).translate([-750,350]);
 var path = d3.geoPath().projection(projection);
 d3.select("#zoom_in").on("click", function() {
     zoom.scaleBy(svg.transition().duration(750), 1.2);
