@@ -64,7 +64,6 @@ function loadTooltip(d){
         if (provinsi[id].code == d.properties.CODE) {
             html += `<div style="max-width:300px">
             <h4 class='kasus' style="padding-bottom:5px">` + provinsi[id].country + `</h4>
-            <h4 style="font-weight:300">value :` + provinsi[id].value + `</h4>
             </div>`;
             tooltip.html(html);
         }else{
