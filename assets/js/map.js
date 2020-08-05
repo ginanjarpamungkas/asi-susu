@@ -2,7 +2,7 @@ var zoom = d3.zoom().scaleExtent([1,8]).on('zoom', zoomed);
 function zoomed() {
     g_country.attr("transform", d3.event.transform);
 }
-
+var color =  ['#ffffff', '#ffe5de', '#ffcabc', '#fcb09c', '#f6957d', '#ee7a5e', '#e45d41', '#d93d23', '#cc0000']
 var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('viewBox', '0 0 960 500').attr('id', 'word-map').call(zoom).on("wheel.zoom", null);
 var g_country = svg.append("g").attr("class", "countries")
 var projection = d3.geoMercator().scale(600).translate([-750,350]);
