@@ -76,8 +76,8 @@
     background-color: #fff;
 }
 .more-btn span::before{
-    content: "TUTUP \f106";
+    content: "TUTUP \25B2";
 }
 .more-btn span.close::before{
-    content: "BACA SELENGKAPNYA \f107";
+    content: "BACA SELENGKAPNYA \25BC";
 }
