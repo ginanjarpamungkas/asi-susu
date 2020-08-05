@@ -7,6 +7,7 @@ var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('
 var g_country = svg.append("g").attr("class", "countries")
 var projection = d3.geoMercator().scale(600).translate([-750,350]);
 var path = d3.geoPath().projection(projection);
+var tooltip = d3.select('body').append('div').attr('class', 'hidden tooltip');
 d3.select("#zoom_in").on("click", function() {
     zoom.scaleBy(svg.transition().duration(750), 1.2);
 });
