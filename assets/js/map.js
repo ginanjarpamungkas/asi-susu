@@ -43,11 +43,11 @@ d3.json("eastAsia.json",
 								if (v.value > 30) {
 									$('#'+v.code).css('fill',color[8])
 								} else if (v.value > 20) {
-									$('#'+v.code).css('fill',color[7])
-								} else if (v.value > 10) {
 									$('#'+v.code).css('fill',color[6])
-								} else if (v.value < 11) {
-									$('#'+v.code).css('fill',color[5])
+								} else if (v.value > 10) {
+									$('#'+v.code).css('fill',color[4])
+								} else if (v.value > 0) {
+									$('#'+v.code).css('fill',color[2])
 								} else {
 									$('#'+v.code).css('fill',color[0])
 								}
