@@ -1,0 +1,83 @@
+.map-container{
+    position: relative;
+}
+#map-world{
+    cursor: grab;
+    background-color: #006994;
+}
+.textCountry{
+    fill: #fff;
+}
+.leaflet-control-container{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+.leaflet-top-leaflet-left{
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 2px solid rgba(0,0,0,0.2);
+    background-clip: padding-box;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.leaflet-control-zoom{
+    display: grid;
+}
+.leaflet-control-zoom a{
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+}
+.leaflet-control-zoom a:hover{
+    background-color: #f4f4f4;
+}
+.leaflet-control-zoom a:first-child{
+    border-bottom: 1px solid #ccc;
+}
+.box-inner{
+    border: 1px solid #000;
+    border-top: 5px solid #000;
+    border-bottom: 3px solid #000;
+    border-radius: 4px;
+    padding: 10px;
+    position: relative;
+}
+.box-inner.close{
+    max-height: 500px;
+    overflow: hidden;
+}
+.more-btn{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #000;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.more-btn.close{
+    background-color: unset;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,1));
+    height: 400px;
+    padding-bottom: 10px;
+}
+.more-btn span{
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+}
+.more-btn span::before{
+    content: "TUTUP \f106";
+}
+.more-btn span.close::before{
+    content: "BACA SELENGKAPNYA \f107";
+}
