@@ -39,16 +39,14 @@ d3.json("eastAsia.json",
     d3.csv('data.csv',function(csv){
 	    provinsi = csv
 							$.each(csv, function(id,v) {
-								if (v.value > 30) {
+								if (v.value == 4) {
 									$('#'+v.code).css('fill',color[8])
-								} else if (v.value > 20) {
+								} else if (v.value == 3) {
 									$('#'+v.code).css('fill',color[6])
-								} else if (v.value > 10) {
+								} else if (v.value == 2) {
 									$('#'+v.code).css('fill',color[4])
-								} else if (v.value > 0) {
+								} else if (v.value == 1) {
 									$('#'+v.code).css('fill',color[2])
-								} else {
-									$('#'+v.code).css('fill',color[0])
 								}
 							})
 						})
