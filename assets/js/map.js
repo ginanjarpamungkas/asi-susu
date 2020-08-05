@@ -78,6 +78,8 @@ d3.json("eastAsia.json",
 									$('#'+v.code).css('fill',color[6])
 								} else if (v.value < 11) {
 									$('#'+v.code).css('fill',color[5])
+								} else {
+									$('#'+v.code).css('fill',color[0])
 								}
 							})
 						})
