@@ -14,7 +14,7 @@ d3.select("#zoom_in").on("click", function() {
 d3.select("#zoom_out").on("click", function() {
     zoom.scaleBy(svg.transition().duration(750), 0.8);
 });
-
+var provinsi = '';
 d3.json("eastAsia.json",
   function(json) {
     country = g_country
@@ -36,7 +36,6 @@ d3.json("eastAsia.json",
                                 d3.select(this).transition().style("stroke-width", 0.5).attr("stroke", "#000")
                                 tooltip.style('visibility','hidden');
                             });
-    var provinsi = '';
     d3.csv('data.csv',function(csv){
 	    provinsi = csv
 							$.each(csv, function(id,v) {
@@ -62,7 +61,7 @@ function readmore(e) {
 }
 function loadTooltip(d){
     var html = "";
-    alert(d.properties)
+    console.log(d)
     $.each(provinsi,function(id,value) {
         if (provinsi[id].code == d.properties.CODE) {
             html += `<div style="max-width:300px">
