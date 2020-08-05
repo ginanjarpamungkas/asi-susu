@@ -7,7 +7,7 @@ var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('
 var g_country = svg.append("g").attr("class", "countries")
 var projection = d3.geoMercator().scale(600).translate([-750,350]);
 var path = d3.geoPath().projection(projection);
-var tooltip = d3.select('body').append('div').attr('class', 'hidden tooltip');
+// var tooltip = d3.select('body').append('div').attr('class', 'hidden tooltip');
 d3.select("#zoom_in").on("click", function() {
     zoom.scaleBy(svg.transition().duration(750), 1.2);
 });
@@ -27,15 +27,15 @@ d3.json("eastAsia.json",
     .attr("stroke", "#000000")
     .attr("stroke-width", 0.2)
     .attr("id",function(d){return d.properties.CODE;})
-    .on("mouseover", function (d) {
-                                d3.select(this).transition().style("stroke-width", 1).attr("stroke", "#f79518")
-                                loadTooltip(d),
-                                tooltip.style('visibility','visible').style("left", ((d3.event.pageX)+10) + "px").style("top", (d3.event.pageY - 28) + "px")
-                            })
-                            .on("mouseout", function (d) {
-                                d3.select(this).transition().style("stroke-width", 0.5).attr("stroke", "#000")
-                                tooltip.style('visibility','hidden');
-                            });
+    // .on("mouseover", function (d) {
+    //                             d3.select(this).transition().style("stroke-width", 1).attr("stroke", "#f79518")
+    //                             loadTooltip(d),
+    //                             tooltip.style('visibility','visible').style("left", ((d3.event.pageX)+10) + "px").style("top", (d3.event.pageY - 28) + "px")
+    //                         })
+    //                         .on("mouseout", function (d) {
+    //                             d3.select(this).transition().style("stroke-width", 0.5).attr("stroke", "#000")
+    //                             tooltip.style('visibility','hidden');
+    //                         });
     d3.csv('data.csv',function(csv){
 	    provinsi = csv
 							$.each(csv, function(id,v) {
@@ -57,18 +57,18 @@ function readmore(e) {
     $(e).toggleClass('close');
     $('.box-inner, .more-btn').toggleClass('close');
 }
-function loadTooltip(d){
-    var html = "";
-    console.log(d)
-    $.each(provinsi,function(id,value) {
-        if (provinsi[id].code == d.properties.CODE) {
-            html += `<div style="max-width:300px">
-            <h4 class='kasus' style="padding-bottom:5px">` + provinsi[id].country + `</h4>
-            </div>`;
-            tooltip.html(html);
-        }else{
-            html += ``;
-            tooltip.html(html);
-        }
-    });
-}
+// function loadTooltip(d){
+//     var html = "";
+//     console.log(d)
+//     $.each(provinsi,function(id,value) {
+//         if (provinsi[id].code == d.properties.CODE) {
+//             html += `<div style="max-width:300px">
+//             <h4 class='kasus' style="padding-bottom:5px">` + provinsi[id].country + `</h4>
+//             </div>`;
+//             tooltip.html(html);
+//         }else{
+//             html += ``;
+//             tooltip.html(html);
+//         }
+//     });
+// }
