@@ -89,6 +89,6 @@ div.tooltip {color: #fff;background-color: rgb(0,0,0,0.7);padding: .5em;border-r
     content: "BACA SELENGKAPNYA \25BC";
 }
 @media (max-width: 740px){
-    .legends{position: unset;padding: 0;}
+    .legends{position: unset;padding: 0;display: block;}
     .legends li{display: list-item;}
 }
