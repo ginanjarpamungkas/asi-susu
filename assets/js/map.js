@@ -3,7 +3,7 @@ function zoomed() {
     g_country.attr("transform", d3.event.transform);
 }
 
-var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('viewBox', '0 0 960 500').attr('id', 'word-map').call(zoom).on("wheel.zoom", null);
+var svg = d3.select("#map-world").append("svg").attr('x', 0).attr('y', 0).attr('viewBox', '0 0 960 400').attr('id', 'word-map').call(zoom).on("wheel.zoom", null);
 var g_country = svg.append("g").attr("class", "countries")
 var projection = d3.geoMercator().scale(500).translate([-510,300]);
 var path = d3.geoPath().projection(projection);
@@ -14,7 +14,7 @@ d3.select("#zoom_out").on("click", function() {
     zoom.scaleBy(svg.transition().duration(750), 0.8);
 });
 
-d3.json("countries.json",
+d3.json("eastAsia.json",
   function(json) {
     country = g_country
     .selectAll("path")
@@ -66,7 +66,7 @@ d3.json("countries.json",
     //     .transition()
     //     .style('fill', '#fff')
     // });
-    textCountry = g_country.selectAll("text").data(json.features).enter().append("svg:text").text(function(d){return d.properties.ADMIN;}).attr("x", function(d){return path.centroid(d)[0];}).attr("y", function(d){return  path.centroid(d)[1];}).attr("text-anchor","middle").attr('font-size','5pt').attr('class','textCountry');
+    // textCountry = g_country.selectAll("text").data(json.features).enter().append("svg:text").text(function(d){return d.properties.ADMIN;}).attr("x", function(d){return path.centroid(d)[0];}).attr("y", function(d){return  path.centroid(d)[1];}).attr("text-anchor","middle").attr('font-size','5pt').attr('class','textCountry');
   }
 )
 function readmore(e) {
