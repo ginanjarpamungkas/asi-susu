@@ -27,41 +27,26 @@ d3.json("eastAsia.json",
     .attr("stroke", "#000000")
     .attr("stroke-width", 0.2)
     .attr("id",function(d){return d.properties.CODE;})
-    // .on('mouseenter', function(d) {
-    //   tooltip.style("display","block")
-    //   d3.select(this)
-    //     .transition()
-    //     .style('fill', ''+d.properties.COLOR+'')
-    //   })
-    // .on('mousemove', function(d) {
-    //   if (d.properties.NAME == 'WPPNRI 717' || d.properties.NAME == 'WPPNRI 715' || d.properties.NAME == 'WPPNRI 718') {
-    //     tooltip
-    //       .style("left", (d3.event.pageX)-($('.tooltip').width()+30) + "px")
-    //       .style("top", (d3.event.pageY - 60) + "px")
-    //       .html(`
-    //       <div><center><span>${d.properties.NAME}</span></center></div>
-    //       <div><span>Wilayah:</span><br><p>${d.properties.WILAYAH}</p></div>
-    //       <div><span>Potensi:</span><br><p>${d.properties.POTENSI}</p></div>
-    //       <div><span>Tangkapan Diperbolehkan:</span><br><p>${d.properties.TANGKAPAN}</p></div>
-    //       <div><span>Tingkat Pemanfaatan:</span><br><p>${d.properties.PEMANFAATAN}</p></div>
-    //       <div><span>Status:</span><br><p>${d.properties.STATUS}</p></div>
-    //       <div><span>Kuota Penangkapan Benih:</span><br><p>${d.properties.KUOTA} ekor</p></div>
-    //       `);
-    //   }else{
-    //     tooltip
-    //       .style("left", (d3.event.pageX + 10) + "px")
-    //       .style("top", (d3.event.pageY - 60) + "px")
-    //       .html(`
-    //       <div><center><span>${d.properties.NAME}</span></center></div>
-    //       <div><span>Wilayah:</span><br><p>${d.properties.WILAYAH}</p></div>
-    //       <div><span>Potensi:</span><br><p>${d.properties.POTENSI}</p></div>
-    //       <div><span>Tangkapan Diperbolehkan:</span><br><p>${d.properties.TANGKAPAN}</p></div>
-    //       <div><span>Tingkat Pemanfaatan:</span><br><p>${d.properties.PEMANFAATAN}</p></div>
-    //       <div><span>Status:</span><br><p>${d.properties.STATUS}</p></div>
-    //       <div><span>Kuota Penangkapan Benih:</span><br><p>${d.properties.KUOTA} ekor</p></div>
-    //       `);
-    //   }
-    // })
+     .on('mouseenter', function(d) {
+       tooltip.style("display","block")
+       d3.select(this)
+         .transition()
+         .style('fill', ''+d.properties.COLOR+'')
+       })
+     .on('mousemove', function(d) {
+       tooltip
+           .style("left", (d3.event.pageX)-($('.tooltip').width()+30) + "px")
+           .style("top", (d3.event.pageY - 60) + "px")
+           .html(`
+           <div><center><span>${d.properties.NAME}</span></center></div>
+           <div><span>Wilayah:</span><br><p>${d.properties.WILAYAH}</p></div>
+           <div><span>Potensi:</span><br><p>${d.properties.POTENSI}</p></div>
+           <div><span>Tangkapan Diperbolehkan:</span><br><p>${d.properties.TANGKAPAN}</p></div>
+           <div><span>Tingkat Pemanfaatan:</span><br><p>${d.properties.PEMANFAATAN}</p></div>
+           <div><span>Status:</span><br><p>${d.properties.STATUS}</p></div>
+           <div><span>Kuota Penangkapan Benih:</span><br><p>${d.properties.KUOTA} ekor</p></div>
+           `);
+     })
     // .on('mouseout', function() {
     //     tooltip.style("display","none")
     //     d3.select(this)
